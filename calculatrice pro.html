@@ -1,0 +1,155 @@
+<html>
+<head> <title>Calculatrice scientifique</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<fieldset style="background : black">
+<h1 align="center"style="color:pink; font-weight :bold;font-style:Italic; font-family : Times New roman"> CALCULATRICE </h1>
+<h3 align="right"style="color:orange; font-weight :bold;font-style:Italic; font-family : Times New roman"> <u> By Stan.co </u> </h3>
+<fieldset style="background :#DFE9FF;size:10;width:90%;height:150px">
+<div id="op"style="font-size :40px;height:80px;color:red"></div> <br>
+<div id="re"style="font-size :40px;height:50px;color:blue;font-weight:bold;">0</div> <br>
+</fieldset><br><br>
+<form>
+<input type="button"value="AC"onclick="on();"style="font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:50px">
+<input type="button"value="²√x"onclick="sq();"style="margin-left :2%; font-size :15px; font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:50px">
+<input type="button"value="x²"onclick="pow();"style="margin-left :4%; font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:50px">
+<input type="button"value="Del"onclick="ef();"ondblclick="del();"style="margin-left :5%; font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:25%;height:50px"><br><br>
+<input type="button"value="7"onclick="a(); res()"style="font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="8"onclick="b(); res()"style="margin-left: 3%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="9"onclick="c(); res()"style="margin-left: 5%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="×"onclick="f();"style="margin-left: 7%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px"><br><br>
+<input type="button"value="4"onclick="e(); res()"style="font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="5"onclick="g(); res()"style="margin-left: 3%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="6"onclick="h(); res()"style="margin-left: 5%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="÷"onclick="d();"style="margin-left: 7%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px"><br><br>
+<input type="button"value="1"onclick="i(); res()"style="font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="2"onclick="j(); res()"style="margin-left: 3%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="3"onclick="k(); res()"style="margin-left: 5%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="+"onclick="p();"style="margin-left: 7%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px"><br><br>
+<input type="button"value="0"onclick="l(); res()"style="font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="."onclick="n(); res()"style="margin-left: 3%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="Ans"onclick="Ans(); res()"style="margin-left: 5%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:22%;height:40px">
+<input type="button"value="-"onclick="m();"style="margin-left: 6%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px"><br><br>
+<input type="button"value="π"onclick="pi(); res()"style="font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px"><!--Cette ligne est incomplète-->
+<input type="button"value="("onclick="pa();"style="margin-left: 3%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value=")"onclick="par();"style="margin-left: 5%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px">
+<input type="button"value="="onclick="res(); x= document.getElementById('op'). innerHTML; document.getElementById('op'). innerHTML= (x+'=');"style="margin-left: 7%;font-weight :bold;font-style:Italic; font-family : Times New roman;font-size:30px;width:20%;height:40px"><br><br>
+</form>
+</fieldset><br><br><br>
+
+<h3 style="font-weight :bold;font-style:Italic;font-family: Times New roman"> 📖 <u> Mode d'emploi</u> 📖 <br><br>
+• Le bouton "AC" réinitialise la calculatrice<br>
+• Le bouton "²√x" retourne la racine carrée du nombre saisi<br>
+• Le bouton "x²" retourne le carré du nombre saisi<br>
+• Le bouton "Del" efface un caractère (clic)<br>
+• Le bouton "Del" efface toute l'opération (double-clic)<br>
+• Le bouton "Ans" écrit la valeur actuelle du résultat <br> </h3>
+<script language="Javascript">
+function on() {
+document.getElementById("op"). innerHTML= '';
+document.getElementById("re"). innerHTML= 0;
+}
+function a() {
+var a= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(a+"7");
+}
+function b() {
+var b= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(b+"8");
+}
+function c() {
+var c= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(c+"9");
+}
+function e() {
+var e= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(e+"4");
+}
+function g() {
+var g= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(g+"5");
+}
+function h() {
+var h= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(h+"6");
+}
+function i() {
+var i= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(i+"1");
+}
+function j() {
+var j= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(j+"2");
+}
+function k() {
+var k= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(k+"3");
+}
+function l() {
+var l= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(l+"0");
+}
+function n() {
+var n= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(n+".");
+}
+function Ans() {
+ans= parseFloat (document.getElementById("re"). innerHTML);
+var s= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(s+ans);
+}
+function pi() {
+var pi= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(pi+"3.14");
+}
+function par() {
+var p= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(p+")");
+}
+function pow() {
+var po= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=("Math.pow("+po+",2)");
+}
+function sq() {
+var sqr= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=("Math.sqrt("+sqr+")");
+}
+function pa() {
+var b= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML=(b+"(");
+}
+function del() {
+document.getElementById("op"). innerHTML= '';
+}
+function p() { 
+var c= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML= (c+"+");
+}
+function m() { 
+var c= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML= (c+"-");
+}
+function f() { 
+var c= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML= (c+"*");
+}
+function d() { 
+var c= document.getElementById("op"). innerHTML;
+document.getElementById("op"). innerHTML= (c+"/");
+}
+function res() {
+var c= document.getElementById("op"). innerHTML;
+var b= eval(c);
+document.getElementById("re"). innerHTML= b;
+}
+function ef() {
+var a= document.getElementById("op"). innerHTML ;
+var b= a.split('');
+b.pop();
+document.getElementById("op"). innerHTML= (b.join(''));
+}
+</script>
+</body>
+</html>
